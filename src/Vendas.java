@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Vendas {
 
     private String waiter;
@@ -36,6 +38,16 @@ public class Vendas {
         System.out.println("Produto: " + product);
         System.out.println("Preço: R$" + price);
         System.out.println("--------------------------------");
+    }
+
+    public static void resume(List<Vendas> listaVendas){
+        double total = 0;
+        System.out.println("=======Total da mesa ===========");
+        for (Vendas v : listaVendas){
+            v.infoVenda();
+            total += v.getPrice();
+        }
+        System.out.println("Valor total: R$" + total);
     }
 
 }

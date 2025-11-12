@@ -8,6 +8,7 @@ public class Main {
         List<Vendas> listaVendas = new ArrayList<>();
 
         String option;
+        double total = 0;
 
         System.out.println("login:");
         String waiter = scanner.nextLine();
@@ -24,11 +25,10 @@ public class Main {
             listaVendas.add(new Vendas(waiter,table,product,price));
             System.out.println("Adicionar mais itens?\n SIM/NAO");
             option = scanner.nextLine();
+
         } while (option.equalsIgnoreCase("sim"));
 
-        for (Vendas v : listaVendas){
-            v.infoVenda();
-        }
+        Vendas.resume(listaVendas);
 
     }
 }
